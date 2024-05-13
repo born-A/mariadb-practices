@@ -29,7 +29,7 @@ where to_date >= now();
 
 -- 문제5.
 -- 부서는 총 몇 개가 있나요?
-select count(*) 
+select count(distinct(dept_name))
 from departments;
 
 -- 문제6.
@@ -46,9 +46,9 @@ order by LENGTH(dept_name) desc;
 
 -- 문제8.
 -- 현재 급여가 120,000이상 받는 사원은 몇 명이나 있습니까?
-select count(*)
+select count(distinct(emp_no))
 from salaries 
-where salary >= 120.000;
+where salary >= 120000;
 
 -- 문제9.
 -- 어떤 직책들이 있나요? 중복 없이 이름이 긴 순서대로 출력해 보세요.
@@ -58,7 +58,7 @@ order by LENGTH(title) desc;
 
 -- 문제10
 -- 현재 Engineer 직책의 사원은 총 몇 명입니까?
-select count(*) 
+select count(distinct(emp_no)) 
 from titles 
 where title='Engineer' 
 	and to_date >= now();
