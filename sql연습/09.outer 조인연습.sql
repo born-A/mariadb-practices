@@ -20,7 +20,7 @@ select a.name as '이름', b.name as '부서'
   
 -- left (outer) join
 select a.name as '이름', ifnull(b.name, '없음') as '부서'
-  from emp a left join dept b on a.dept_no = b.no;
+from emp a left join dept b on a.dept_no = b.no;
 
 -- right (outer) join
 select ifnull(a.name, '없음') as '이름', b.name as '부서'
